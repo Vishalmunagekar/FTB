@@ -21,6 +21,15 @@ A Python-based backend application using **FastAPI** as the REST API framework a
 
 ## 🚀 Getting Started
 
+### Prerequisites
+
+Ensure the following are installed on your system:
+- **Python 3.13.2** or higher
+- **PostgreSQL 17.4-1**
+- **Git**
+
+---
+
 ### 1. **Clone the Repo**
 
 ```bash
@@ -60,6 +69,8 @@ You can use **DBeaver** or **pgAdmin** to manage your database.
 CREATE DATABASE mydatabase;
 ```
 
+Replace `mydatabase` with your desired database name.
+
 ---
 
 ### 5. **Configure Environment Variables**
@@ -68,10 +79,10 @@ Create a `.env` file in the project root:
 
 ```
 # .env
-DATABASE_URL=postgresql+asyncpg://postgres:admin@123@localhost:5432/mydatabase
+DATABASE_URL=postgresql+asyncpg://postgres:admin%40123@localhost:5432/mydatabase
 ```
 
-Replace `<your_password>` with your actual PostgreSQL password.
+Replace `admin%40123` with your actual PostgreSQL password (URL-encoded if it contains special characters).
 
 ---
 
@@ -112,6 +123,18 @@ Visit: [http://localhost:8000/docs](http://localhost:8000/docs) for interactive 
 
 ---
 
+## 🧪 Testing
+
+To run tests, use the following command:
+
+```bash
+pytest
+```
+
+Ensure all dependencies are installed and the database is configured before running tests.
+
+---
+
 ## 🤝 Contributing
 
 1. Fork the repo
@@ -133,8 +156,3 @@ Visit: [http://localhost:8000/docs](http://localhost:8000/docs) for interactive 
 ## 🛡️ License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
----
-
-Let me know if you want to tweak the tone (formal/fun), add badges (build status, python version), or link to a real repo once it's up on GitHub 💥
